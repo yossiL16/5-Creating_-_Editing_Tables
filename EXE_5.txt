@@ -1,0 +1,66 @@
+חלק א,ב 
+,1:
+
+CREATE TABLE backup_teachers (
+    id int PRIMARY KEY AUTO_INCREMENT,
+    TeacherName VARCHAR(50) NOT NULL,
+    Email VARCHAR(70) NOT NULL,
+    Phone  VARCHAR(15)
+    )
+    ;
+
+
+4:
+CREAT TABLE hours_study AS
+SELECT *
+FROM extended_hours_study
+WHERE classId IN (1,2,3,4,5)
+
+
+חלק ג
+
+4:
+
+ALTER TABLE lecturers
+ADD Email VARCHAR(70) NOT NULL 
+;
+
+5:
+ALTER TABLE lecturers
+MODIFY LecturerName varchar (80) NOT NULL
+;
+
+6:
+ALTER TABLE classes
+DROP COLUMN Status;
+
+חלק ד
+
+7:
+DROP TABLE backup_teachers
+
+חלק ה
+
+8:
+CREATE TABLE student AS 
+SELECT * 
+from students_temp
+;
+
+9:
+ALTER TABLE student
+drop COLUMN personlId;
+
+10:
+ALTER TABLE student
+ADD age int CHECK(age<=25);
+
+11:
+
+
+
+
+
+
+
+
